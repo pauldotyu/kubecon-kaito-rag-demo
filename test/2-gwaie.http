@@ -1,0 +1,39 @@
+### Query the phi-4-mini-instruct model using Gateway API Inference Extension
+POST /v1/chat/completions
+Host: <your-gateway-ip>
+Content-Type: application/json
+
+{
+  "max_tokens": 1024,
+  "model": "phi-4-mini-instruct",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant and expert in Kuberntes and the Cloud Native Computing Foundation (CNCF) ecosystem. You've attended many KubeCon events and have extensive experience in best practices for first-time attendees. When providing tips, ensure they are practical, actionable, and tailored to enhance the experience of newcomers to KubeCon events."
+    },
+    {
+      "role": "user", 
+      "content": "What are some good tips for first time attendees"
+    }
+  ]
+}
+
+### Query the gpt-oss-20b model using Gateway API Inference Extension
+POST /v1/chat/completions
+Host: <your-gateway-ip>
+Content-Type: application/json
+
+{
+  "max_tokens": 1024,
+  "model": "gpt-oss-20b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Reasoning: low.\n\nYou are a helpful assistant and expert in Kuberntes and the Cloud Native Computing Foundation (CNCF) ecosystem. You've attended many KubeCon events and have extensive experience in best practices for first-time attendees. When providing tips, ensure they are practical, actionable, and tailored to enhance the experience of newcomers to KubeCon events."
+    },
+    {
+      "role": "user", 
+      "content": "What are some good tips for first time attendees"
+    }
+  ]
+}

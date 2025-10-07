@@ -1,0 +1,45 @@
+### Get health
+GET /health
+Host: localhost:8001
+
+### Chat
+POST /chat
+Host: localhost:8001
+Content-Type: application/json
+
+{
+  "message": "Will there be any sessions on KAITO and RAG?",
+  "session_id": null
+}
+
+### Chat with session
+POST /chat
+Host: localhost:8001
+Content-Type: application/json
+
+{
+  "message": "Any others?",
+  "session_id": "thread_913ea363-ba40-4843-84f6-c44a188e8112"
+}
+
+### New chat
+POST /chat
+Host: localhost:8001
+Content-Type: application/json
+
+{
+  "message": "Will there be any sessions by Microsoft?",
+  "session_id": null
+}
+
+### Continue new chat with session
+POST /chat
+Host: localhost:8001
+Content-Type: application/json
+
+{
+  "message": "Sweet, tell me more Microsoft's commitment to open-source.",
+  "session_id": "thread_41910b69-4eeb-4b3c-91b3-2feb3dd784b3"
+}
+
+

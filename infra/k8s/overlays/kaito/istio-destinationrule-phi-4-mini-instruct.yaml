@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: wks-phi-4-mini-instruct-destinationrule
+spec:
+  host: wks-phi-4-mini-instruct-inferencepool-epp
+  trafficPolicy:
+    tls:
+      mode: SIMPLE
+      insecureSkipVerify: true

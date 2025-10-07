@@ -1,0 +1,25 @@
+[project]
+name = "agent-service"
+version = "0.1.0"
+description = "KubeCon North America 2025 Demo using Agent Framework"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "agent-framework>=1.0.0b251016",
+    "requests>=2.32.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.9.0",
+    "python-dotenv>=1.0.0",
+    "redis>=5.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.3",
+    "debugpy>=1.8.0",
+    "pytest>=7.0.0",
+]
+
+[tool.uv]
+prerelease = "allow"

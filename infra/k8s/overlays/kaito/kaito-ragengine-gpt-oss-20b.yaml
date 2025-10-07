@@ -1,0 +1,16 @@
+apiVersion: kaito.sh/v1alpha1
+kind: RAGEngine
+metadata:
+  name: rag-gpt-oss-20b
+spec:
+  compute:
+    instanceType: Standard_D8ds_v6 # Standard_NC4as_T4_v3
+    labelSelector:
+      matchLabels:
+        apps: rag-gpt-oss-20b
+  embedding:
+    local:
+      modelID: BAAI/bge-small-en-v1.5
+  inferenceService:
+    url: http://kaito-gateway-istio/v1/chat/completions
+    contextWindowSize: 131072

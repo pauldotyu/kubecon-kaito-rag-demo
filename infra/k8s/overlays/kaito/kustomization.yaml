@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- kaito-ragengine-gpt-oss-20b.yaml
+- kaito-workspace-gpt-oss-20b.yaml
+- kaito-workspace-phi-4-mini-instruct.yaml
+- istio-gateway-kaito.yaml
+- istio-destinationrule-gpt-oss-20b.yaml
+- istio-destinationrule-phi-4-mini-instruct.yaml
+- istio-httprule-llm.yaml
+images:
+- name: sched
+  newName: acrkaitodemo7664.azurecr.io/sched
+  newTag: latest

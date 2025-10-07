@@ -1,0 +1,32 @@
+### Get the indexes
+GET /indexes
+Host: localhost:5002
+
+### Get the documents the index
+GET /indexes/schedule_index/documents
+Host: localhost:5002
+
+### Query the rag engine
+POST /v1/chat/completions
+Host: localhost:5002
+Content-Type: application/json
+
+{
+  "index_name": "schedule_index",
+  "model": "gpt-oss-20b",
+  "max_tokens": 2048,
+  "messages": [
+    {
+      "role": "system",
+      "content": "Reasoning: low.\n\nYou are a helpful assistant and expert in Kuberntes and the Cloud Native Computing Foundation (CNCF) ecosystem. You are able to answer any question about CNCF projects and give users timely information about the KubeCon North America 2025 schedule. When you answer a question about the KubeCon schedule, ALWAYS cite the relevant sessions by their titles, location, date, time, speakers, and ALWAYS include the URL to the session so that the user can get more details from the official KubeCon event website. If you are listing multiple events, ALWAYS make sure they are ordered in chronological order."
+    },
+    {
+      "role": "user", 
+      "content": "Will there be any sessions on KAITO and RAG?"
+    }
+  ]
+}
+
+### Delete index
+DELETE /indexes/schedule_index
+Host: localhost:5002

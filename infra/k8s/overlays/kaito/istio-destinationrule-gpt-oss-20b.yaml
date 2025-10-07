@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: wks-gpt-oss-20b-destinationrule
+spec:
+  host: wks-gpt-oss-20b-inferencepool-epp
+  trafficPolicy:
+    tls:
+      mode: SIMPLE
+      insecureSkipVerify: true

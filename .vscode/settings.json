@@ -1,0 +1,17 @@
+{
+  // Python configuration for monorepo
+  "python.defaultInterpreterPath": "${workspaceFolder}/src/agent/.venv/bin/python",
+  // Tell Pylance where the Python project root is
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/src/agent"
+  ],
+  // Set the root directory for Python analysis
+  "python.analysis.autoSearchPaths": false,
+  // Optionally, you can also configure these for better Python experience
+  "python.terminal.activateEnvironment": false,
+  // If using multiple Python projects in the monorepo, you can add more paths:
+  // "python.analysis.extraPaths": [
+  //   "${workspaceFolder}/src/agent",
+  //   "${workspaceFolder}/src/another-python-project"
+  // ]
+}
